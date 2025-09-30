@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florida Restoration Solutions - Restoring Homes, Enriching Lives</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #34495e;
+            --gray: #95a5a6;
+            --blue-light: #00bfff;
+            --blue-dark: #0077be;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') center/cover no-repeat;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--accent);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(to right, var(--blue-light), var(--blue-dark));
+            z-index: -1;
+            transition: height 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-card:hover:before {
+            height: 100%;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            transition: color 0.3s;
+        }
+
+        .service-card:hover h3 {
+            color: white;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            transition: color 0.3s;
+        }
+
+        .service-card:hover p {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .service-card .cta-button {
+            background-color: var(--accent);
+            border: 2px solid var(--accent);
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover .cta-button {
+            background-color: white;
+            color: var(--primary);
+            border-color: white;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .about-text h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 50px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .about-image {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .mission-vision {
+            margin-top: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .mission-vision h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .mission-vision p {
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .safety-commitment {
+            padding: 20px;
+            background: linear-gradient(to right, #f8f9fa, #e3f2fd);
+            border-left: 4px solid var(--secondary);
+            border-radius: 0 10px 10px 0;
+        }
+
+        .safety-commitment h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 4rem;
+            color: rgba(52, 152, 219, 0.1);
+            font-family: Georgia, serif;
+            z-index: 0;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--dark);
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://i.imgur.com/gpdOll2_d.webp?maxwidth=760&fidelity=grand') center/cover no-repeat;
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .contact-info h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 50px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        .service-card {
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            background-blend-mode: overlay;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: zoomIn 0.3s;
+        }
+
+        @keyframes zoomIn {
+            from { transform: translate(-50%, -50%) scale(0.5); }
+            to { transform: translate(-50%, -50%) scale(1); }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .modal-close:hover {
+            color: #ff4444;
+        }
+
+        #modalCaption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: white;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Florida Restoration Solutions LLC">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Restoring Homes, Enriching Lives</h1>
+            <p>Professional restoration and home improvement services in Florida. Quality workmanship, personalized attention, and exceptional results.</p>
+            <a href="#contact" class="cta-button">Get Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Complete home restoration and improvement solutions</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-image="complete.png">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Painting Services</h3>
+                    <p>Interior and exterior painting, touch-ups, and detailed refinishing with durable finishes for lasting beauty.</p>
+                </div>
+                <div class="service-card" data-image="bathroom.png">
+                    <div class="service-icon">
+                        <i class="fas fa-bath"></i>
+                    </div>
+                    <h3>Bathroom Remodeling</h3>
+                    <p>Complete bathroom transformations including vanities, tiles, fixtures, and custom finishes.</p>
+                </div>
+                <div class="service-card" data-image="pavers.png">
+                    <div class="service-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3>Driveways & Pavers</h3>
+                    <p>Professional driveway installation and decorative paver layouts for beautiful outdoor spaces.</p>
+                </div>
+                <div class="service-card" data-image="garden.png">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Garden Decoration</h3>
+                    <p>Enhance your outdoor spaces with stone, plants, and decorative accents for a beautiful landscape.</p>
+                </div>
+                <div class="service-card" data-image="clean.png">
+                    <div class="service-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3>Professional Cleaning</h3>
+                    <p>Residential cleaning services including deep cleaning, move-in/move-out, and post-renovation cleaning.</p>
+                </div>
+                <div class="service-card" data-image="update.png">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Remodeling Services</h3>
+                    <p>Expert home updates and repairs to keep your space functional and beautiful.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para imagen grande -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption"></div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Who We Are</h2>
+                    <p>Florida Restoration Solutions, led by Leonor Uriarte and Silvia E. Smith, is based in Fruitland Park, Florida. We specialize in painting, bathroom remodeling, driveway and paver installation, garden decoration, and professional cleaning services.</p>
+                    <p>With more than 5 years of experience in the industry, we combine creativity, efficiency, and professionalism to deliver reliable and high-quality restoration and home improvement services that enhance comfort, aesthetics, and long-term value for our clients.</p>
+                    <p>At Florida Restoration Solutions, we are dedicated to improving and maintaining homes with services that combine creativity, efficiency, and professionalism. Our team offers complete solutions that cover painting, remodeling, landscaping accents, and cleaning, always tailored to the unique needs of our clients. We pride ourselves on being trustworthy, detail-oriented, and committed to results that exceed expectations.</p>
+                    
+                    <div class="mission-vision">
+                        <h3>Our Mission</h3>
+                        <p>To deliver reliable and high-quality restoration and home improvement services that enhance comfort, aesthetics, and long-term value for our clients.</p>
+                        
+                        <h3>Our Vision</h3>
+                        <p>To be recognized in Florida as a trusted leader in painting, remodeling, and home solutions, known for innovation, excellence, and personalized customer care.</p>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="team.png" alt="Team of professionals working on home restoration">
+                    
+                    <div class="safety-commitment">
+                        <h3>Our Commitment to Safety</h3>
+                        <p>We prioritize safety for our clients, their properties, and our team throughout every project. From preparation to completion, we ensure secure, organized, and careful practices, creating a hazard-free environment that builds trust and peace of mind.</p>
+                    </div>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Customer Satisfaction</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Emergency Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Real testimonials from satisfied customers</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Florida Restoration Solutions transformed our bathroom completely. The
+                        team was professional, efficient, and the results exceeded our expectations. Highly
+                        recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MJ</div>
+                        <div class="author-info">
+                            <h4>Maria Johnson</h4>
+                            <p>Homeowner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The painting job on our exterior was flawless. They used high-quality
+                        materials and finished the job ahead of schedule. Our house looks brand new!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RS</div>
+                        <div class="author-info">
+                            <h4>Robert Smith</h4>
+                            <p>Homeowner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Professional, reliable, and attention to detail. They cleaned up after
+                        themselves and completed the paver installation perfectly. Great value for money!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">TK</div>
+                        <div class="author-info">
+                            <h4>Tina Kelly</h4>
+                            <p>Homeowner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Contact Us</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <strong>Address</strong>
+                                <p>5209 Sydney Rd, Fruitland Park, FL 34731</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <strong>Phone</strong>
+                                <p>352-818-0327</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <strong>Email</strong>
+                                <p>floridarestorationsolutions@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3494.8912384427276!2d-81.86690159999999!3d28.842097899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e7c07f455b36bd%3A0xf4ee5de07b5aff62!2s5209%20Sydney%20Rd%2C%20Fruitland%20Park%2C%20FL%2034731%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sec!4v1759205431738!5m2!1ses-419!2sec"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Florida Restoration Solutions</h3>
+                    <p>"Restoring Homes, Enriching Lives." Professional restoration and home improvement services in
+                        Florida.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a>Painting Services</a></li>
+                        <li><a>Bathroom Remodeling</a></li>
+                        <li><a>Driveway & Pavers</a></li>
+                        <li><a>Garden Decoration</a></li>
+                        <li><a>Professional Cleaning</a></li>
+                        <li><a>Maintenance Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 5209 Sydney Rd, Fruitland Park, FL 34731</li>
+                        <li><i class="fas fa-phone"></i> 352-818-0327</li>
+                        <li><i class="fas fa-envelope"></i> floridarestorationsolutions@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Florida Restoration Solutions LLC. All rights reserved. | "Restoring Homes, Enriching
+                    Lives."</p>
+            </div>
+        </div>
+    </footer>
+
+   <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Add animation on scroll
+    window.addEventListener('scroll', function () {
+        const elements = document.querySelectorAll('.service-card, .testimonial-card');
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            if (elementPosition < screenPosition) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    // Initialize elements with animation properties
+    document.querySelectorAll('.service-card, .testimonial-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+
+    // Service cards hover and modal functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // Efecto hover con imagen de fondo y modal
+        document.querySelectorAll('.service-card').forEach(card => {
+            const imagePath = card.getAttribute('data-image');
+            
+            card.addEventListener('mouseenter', function() {
+                if (imagePath) {
+                    this.style.backgroundImage = `linear-gradient(rgba(0, 191, 255, 0.7), rgba(0, 119, 190, 0.7)), url('${imagePath}')`;
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.backgroundImage = 'none';
+            });
+            
+            // Click para abrir modal
+            card.addEventListener('click', function() {
+                const modal = document.getElementById('imageModal');
+                const modalImg = document.getElementById('modalImage');
+                const caption = document.getElementById('modalCaption');
+                
+                if (modal && modalImg && caption && imagePath) {
+                    modal.style.display = 'block';
+                    modalImg.src = imagePath;
+                    caption.textContent = this.querySelector('h3').textContent;
+                }
+            });
+        });
+
+        // Cerrar modal
+        const closeBtn = document.querySelector('.modal-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                const modal = document.getElementById('imageModal');
+                if (modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+
+        // Cerrar modal al hacer click fuera de la imagen
+        const modal = document.getElementById('imageModal');
+        if (modal) {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.style.display = 'none';
+                }
+            });
+        }
+    });
+</script>
+    
+</body>
+
+</html>
